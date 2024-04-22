@@ -1,3 +1,37 @@
-.container {
-    width: 25%;
+.containerAsideItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 5.25rem;
+  border-bottom: 0.0625rem solid rgb(242, 242, 243);
+  border-top: 0.0625rem solid rgb(242, 242, 243);
+  .wrapperImg {
+    width: 4rem;
+    img {
+      width: 100%;
+    }
+  }
+  p {
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1rem;
+    &:nth-child(2) {
+      color: rgb(177, 177, 177);
+    }
+  }
+}
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 5.25rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background: rgb(242, 242, 243);
 }
