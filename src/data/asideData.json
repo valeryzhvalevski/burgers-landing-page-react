@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Супер сырный",
+    "price": "550₽",
+    "weight": "520г",
+    "value": 1,
+    "id": 2.1,
+    "image": null
+  },
+  {
+    "title": "Картошка фри",
+    "price": "245₽",
+    "weight": "180г",
+    "value": 2,
+    "id": 2.2,
+    "image": null
+  },
+  {
+    "title": "Жгучий хот-дог",
+    "price": "239₽",
+    "weight": "245г",
+    "value": 1,
+    "id": 2.3,
+    "image": null
+  }
+]
