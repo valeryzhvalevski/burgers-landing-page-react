@@ -1,0 +1,47 @@
+.container {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.bg {
+  position: absolute;
+  z-index: -1;
+  background: rgb(255, 171, 8);
+  left: -45rem;
+  right: -45rem;
+  top: -150.88rem;
+  bottom: 0;
+  border-radius: 50%;
+}
+.logo {
+  margin: 22px auto 0;
+}
+.contentBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  flex-basis: 40%;
+  h1 {
+    font-size: 3.13rem;
+    font-weight: 800;
+    line-height: 120%;
+    color: rgb(255, 255, 255);
+    span {
+      color: rgb(255, 92, 0);
+    }
+  }
+  p {
+    margin-bottom: 7px;
+    color: rgb(255, 255, 255);
+  }
+}
+.wrapperBtn {
+  width: 268px;
+  margin-left: 1rem;
+}

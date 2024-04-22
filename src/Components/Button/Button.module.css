@@ -1,0 +1,11 @@
+.btn {
+  width: 100%;
+  height: 40px;
+  display: block;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}/*# sourceMappingURL=Button.module.css.map */
