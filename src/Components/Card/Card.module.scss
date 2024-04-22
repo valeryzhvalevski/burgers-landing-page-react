@@ -1,0 +1,29 @@
+.containerCard {
+  width: 30%;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 1.13rem;
+  transition: transform 0.3s ease-in-out;
+  .wrapperImages {
+    width: 100%;
+    img {
+        width: 100%;
+    }
+  }
+  h3 {
+    margin-top: 0.8rem;
+  }
+  p {
+    &:first-of-type {
+      margin-top: 0.6rem;
+    }
+    &:last-of-type {
+      margin: 1.7rem 0 1rem;
+      color: rgb(177, 177, 177);
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+}

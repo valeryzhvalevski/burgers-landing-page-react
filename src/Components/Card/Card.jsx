@@ -7,7 +7,7 @@ export default function Card({ title, price, gramm, images }) {
       <div className={style.wrapperImages}>
         <img src={images} alt="pict" />
       </div>
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <p>{price}</p>
       <p>{gramm}</p>
       <div className={style.wrapperBtn}>

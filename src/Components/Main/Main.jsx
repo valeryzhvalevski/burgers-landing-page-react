@@ -8,11 +8,12 @@ export default function Main() {
 
   return (
     <div className={style.container}>
+      <h2>Бургеры</h2>
       {newData.map((item, index) => (
         <Card
           images={item.images}
           price={item.price}
-          gramm={item.gramm}
+          gramm={item.gramms}
           title={item.title}
         />
       ))}

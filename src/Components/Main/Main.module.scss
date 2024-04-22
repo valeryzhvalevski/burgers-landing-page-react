@@ -1,0 +1,13 @@
+.container {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.2rem;
+  h2 {
+    width: 100%;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 120%;
+  }
+}

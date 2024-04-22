@@ -12,4 +12,12 @@ body {
 button {
     cursor: pointer;
     border: none;
+    transition: background-color 0.3s ease;
+
+}
+.wrapper_content {
+    display: flex;
+    width: 88%;
+    margin: 0 auto;
+    margin-top: 60px;
 }
