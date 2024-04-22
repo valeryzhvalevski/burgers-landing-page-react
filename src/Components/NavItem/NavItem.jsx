@@ -2,7 +2,7 @@ import style from "./NavItem.module.scss";
 
 export default function Nav({image, title}) {
   return (
-    <button className={style.containerNavItem}>
+    <button className={style.NavItem}>
     <div className={style.wrapperImg}>
       <img src={image} alt="navigation-img" />
     </div>
