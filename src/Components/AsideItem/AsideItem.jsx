@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import style from "./AsideItem.module.scss";
 
-export default function Aside({ image, title, weight, price }) {
-  const [value, setValue] = useState(1); 
+export default function AsideItem({ image, title, weight, price, value, onUpdateItemCount }) {
+  const [count, setCount] = useState(value);
+
   const decrement = () => {
-    if (value > 1) {
-      setValue(prevValue => prevValue - 1); 
+    if (count > 1) {
+      setCount(prevCount => prevCount - 1);
     }
   };
 
   const increment = () => {
-    setValue(prevValue => prevValue + 1); 
+    setCount(prevCount => prevCount + 1);
   };
 
   return (
@@ -27,12 +28,9 @@ export default function Aside({ image, title, weight, price }) {
       </div>
       <div className={style.counter}>
         <button className={style.lessBnt} onClick={decrement}>-</button>
-        <p className={style.valueCounter}>{value}</p>
+        <p className={style.valueCounter}>{count}</p>
         <button className={style.moreBnt} onClick={increment}>+</button>
       </div>
     </div>
   );
 }
-
-
-

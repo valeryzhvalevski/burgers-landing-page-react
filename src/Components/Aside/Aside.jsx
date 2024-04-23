@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import Button from "../Button/Button";
 import style from "./Aside.module.scss";
 import AsideItem from "../AsideItem/AsideItem";
@@ -22,6 +23,7 @@ export default function Aside() {
             price={item.price}
             weight={item.weight}
             value={item.value}
+            key={uuidv4()}
           />
         ))}
       </div>

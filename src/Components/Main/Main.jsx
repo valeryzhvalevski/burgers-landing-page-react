@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import style from "./Main.module.scss";
 import Card from "../Card/Card";
 import data from "../../data/burgers.json";
@@ -15,6 +16,7 @@ export default function Main() {
           price={item.price}
           gramm={item.gramms}
           title={item.title}
+          key={uuidv4()}
         />
       ))}
     </div>

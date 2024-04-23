@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import style from "./Nav.module.scss";
 import NavItem from "../NavItem/NavItem";
 import data from "../../data/navItems.json";
@@ -9,7 +10,7 @@ export default function Nav() {
   return (
     <div className={style.container}>
       {newData.map((item, index) => (
-        <NavItem image={item.image} title={item.title} />
+        <NavItem image={item.image} title={item.title} key={uuidv4()} />
       ))}
     </div>
   );
