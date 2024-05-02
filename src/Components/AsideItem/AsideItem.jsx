@@ -1,19 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import style from "./AsideItem.module.scss";
 
-export default function AsideItem({ image, title, weight, price, value, onUpdateItemCount }) {
-  const [count, setCount] = useState(value);
-
-  const decrement = () => {
-    if (count > 1) {
-      setCount(prevCount => prevCount - 1);
-    }
-  };
-
-  const increment = () => {
-    setCount(prevCount => prevCount + 1);
-  };
-
+export default function AsideItem({
+  image,
+  title,
+  weight,
+  price,
+  count,
+  id,
+  editCountCart,
+}) {
   return (
     <div className={style.containerAsideItem}>
       <div className={style.product}>
@@ -23,13 +19,17 @@ export default function AsideItem({ image, title, weight, price, value, onUpdate
         <div className={style.wrapperText}>
           <p>{title}</p>
           <p>{weight}</p>
-          <p>{price}</p>
+          <p>{price}₽</p>
         </div>
       </div>
       <div className={style.counter}>
-        <button className={style.lessBnt} onClick={decrement}>-</button>
+        <button className={style.lessBnt} onClick={() => editCountCart(id, -1)}>
+          -
+        </button>
         <p className={style.valueCounter}>{count}</p>
-        <button className={style.moreBnt} onClick={increment}>+</button>
+        <button className={style.moreBnt} onClick={() => editCountCart(id, +1)}>
+          +
+        </button>
       </div>
     </div>
   );
