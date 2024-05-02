@@ -11,7 +11,7 @@ import burgers from "./data/burgers.json";
 import asideData from "./data/asideData.json";
 
 export default function App() {
-  const [cart, setCart] = useState([addAsideImg(asideData)]);
+  const [cart, setCart] = useState(addAsideImg(asideData));
   const [products, setProducts] = useState([addDataImgame(burgers)]);
 
   const stateObj = { cart, setCart, products, setProducts };
