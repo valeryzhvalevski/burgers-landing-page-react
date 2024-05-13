@@ -9,7 +9,7 @@ export default function Card({ title, price, gramm, images }) {
         <img src={images} alt="pict" />
       </div>
       <h3>{title}</h3>
-      <p>{price} ₽</p>
+      <p>{price} BYN</p>
       <p>{gramm}</p>
       <div className={style.wrapperBtn}>
         <Button content="Добавить" color="#F2F2F3" colorText="black" />

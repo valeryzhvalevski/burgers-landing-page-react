@@ -1,43 +1,43 @@
 [
     {
         "title": "Мясная бомба",
-        "price": "689",
-        "gramms": "520г",
+        "price": "12.99",
+        "gramms": "520 г",
         "id": 1,
         "images": null
     },
     {
         "title": "Супер сырный",
-        "price": "550",
-        "gramms": "512г",
+        "price": "11.50",
+        "gramms": "512 г",
         "id": 2,
         "images": null
     },
     {
         "title": "Сытный",
-        "price": "570",
-        "gramms": "612г",
+        "price": "14.00",
+        "gramms": "612 г",
         "id": 3,
         "images": null
     },
     {
         "title": "Тяжелый удар",
-        "price": "510",
-        "gramms": "412г",
+        "price": "16.50",
+        "gramms": "412 г",
         "id": 4,
         "images": null
     },
     {
         "title": "Вечная классика",
-        "price": "412",
-        "gramms": "400г",
+        "price": "12.00",
+        "gramms": "400 г",
         "id": 5,
         "images": null
     },
     {
         "title": "Итальянский",
-        "price": "340",
-        "gramms": "812г",
+        "price": "13.30",
+        "gramms": "419 г",
         "id": 6,
         "images": null
     }
