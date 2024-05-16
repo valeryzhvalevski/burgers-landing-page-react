@@ -1,8 +1,8 @@
 import style from "./NavItem.module.scss";
 
-export default function Nav({image, title}) {
+export default function Nav({image, index,title, editNavIndex}) {
   return (
-    <button className={style.NavItem}>
+    <button className={style.NavItem} onClick={() => editNavIndex(index)}>
     <div className={style.wrapperImg}>
       <img src={image} alt="navigation-img" />
     </div>

@@ -11,18 +11,18 @@ import addAsideImg from "../../common/addAsideImg";
 
 export default function Aside({stateObj}) {
   const {cart, setCart} = stateObj;
-  console.log(cart, setCart);//
+  // console.log(cart, setCart);//
    function editCountCart(id, symbol) {
     const newCart = cart.map((item) => {
       if (item.id === id) {
         item.count  = +item.count + symbol;
-        console.log(item.count); ///
+        // console.log(item.count); ///
        return item;
       }
       return item;
     });
     setCart(newCart);
-    console.log(newCart);
+    // console.log(newCart);
   }
 
   return (
