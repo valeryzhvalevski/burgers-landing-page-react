@@ -2,9 +2,19 @@ import { v4 as uuidv4 } from "uuid";
 import Button from "../Button/Button";
 import style from "./Card.module.scss";
 
-export default function Card({ title, price, gramm, images }) {
+export default function Card({ title, price, gramm, images, getDataActiveModal, id }) {
+  const handleCardClick = (event) => {
+    if (event.target.tagName !== 'BUTTON') {
+      getDataActiveModal(id);
+    }
+  };
+
   return (
-    <div className={style.containerCard} key={uuidv4()}>
+    <div 
+      className={style.containerCard} 
+      key={uuidv4()}
+      onClick={handleCardClick}
+    >
       <div className={style.wrapperImages}>
         <img src={images} alt="pict" />
       </div>

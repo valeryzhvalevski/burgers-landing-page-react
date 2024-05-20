@@ -1,28 +1,24 @@
-import { v4 as uuidv4 } from "uuid";
-import Button from "../Button/Button";
-import style from "./Aside.module.scss";
-import AsideItem from "../AsideItem/AsideItem";
-import delivery from "../../assets/delivery.png";
-import { calcAllProductCount, calcAllProductPrice  } from "../../common/counterPrice";
-import { useState } from "react";
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import Button from '../Button/Button';
+import style from './Aside.module.scss';
+import AsideItem from '../AsideItem/AsideItem';
+import delivery from '../../assets/delivery.png';
+import { calcAllProductCount, calcAllProductPrice } from '../../common/counterPrice';
 
-import data from "../../data/asideData.json";
-import addAsideImg from "../../common/addAsideImg";
+export default function Aside({ stateObj }) {
+  const { cart, setCart } = stateObj;
 
-export default function Aside({stateObj}) {
-  const {cart, setCart} = stateObj;
-  // console.log(cart, setCart);//
-   function editCountCart(id, symbol) {
+  function editCountCart(id, symbol) {
+    console.log('Editing cart item count for ID:', id, 'with symbol:', symbol);
     const newCart = cart.map((item) => {
       if (item.id === id) {
-        item.count  = +item.count + symbol;
-        // console.log(item.count); ///
-       return item;
+        item.count = +item.count + symbol;
+        return item;
       }
       return item;
     });
     setCart(newCart);
-    // console.log(newCart);
   }
 
   return (
@@ -32,7 +28,7 @@ export default function Aside({stateObj}) {
         <p>{calcAllProductCount(cart)}</p>
       </div>
       <div className={style.containerContent}>
-        {cart.map((item, index) => (
+        {cart.map((item) => (
           <AsideItem
             image={item.image}
             title={item.title}
@@ -58,4 +54,3 @@ export default function Aside({stateObj}) {
     </div>
   );
 }
-
