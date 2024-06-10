@@ -1,0 +1,32 @@
+@import "../../style/template.scss";
+.wrapperBurgerCars {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 12px;
+  cursor: pointer;
+  .burgerImage {
+    margin-bottom: 16px;
+  }
+  .burgerPrice {
+    font-family: Nunito;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 100%;
+    margin-bottom: 8px;
+  }
+  .burgerTitle {
+    font-family: Nunito;
+    font-size: 16px;
+    line-height: 130%;
+    margin-bottom: 29px;
+  }
+  .burgerGramm {
+    color: rgb(177, 177, 177);
+    font-family: Nunito;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 130%;
+    margin-bottom: 8px;
+  }
+}

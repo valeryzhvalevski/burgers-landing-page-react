@@ -1,0 +1,26 @@
+@import "../../style/template.scss";
+.oneItemNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background: rgb(245, 210, 140);
+  }
+  cursor: pointer;
+  .imgSize {
+    width: 24px;
+    height: 24px;
+  }
+  p {
+    font-family: Nunito;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+.checked{
+background: rgb(255, 171, 8);
+}

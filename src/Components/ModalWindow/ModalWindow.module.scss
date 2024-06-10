@@ -1,0 +1,85 @@
+.wrapperModal {
+  background-color: rgba(0, 0, 0, 0.253);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+  .modalWindow {
+    max-width: 684px;
+    height: 432px;
+    padding: 24px;
+    background-color: white;
+    .orderName {
+      display: flex;
+      justify-content: space-between;
+      h3 {
+        font-family: Nunito;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 120%;
+        margin-bottom: 24px;
+      }
+      img {
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+      }
+    }
+    .aboutProduct {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 40px;
+      img {
+        width: 276px;
+        height: 220px;
+        border-radius: 16px;
+      }
+      .description {
+        font-family: Nunito;
+        font-size: 16px;
+        line-height: 130%;
+        margin-bottom: 10px;
+      }
+      .sostav {
+        font-family: Nunito;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 130%;
+        margin-bottom: 4px;
+      }
+    }
+    .addToOrder {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      .counter {
+        width: 84px;
+        height: 40px;
+        border-radius: 12px;
+        background: rgb(242, 242, 243);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 9px;
+        .pointer {
+          font-family: Nunito;
+          font-size: 16px;
+          line-height: 22px;
+          border: none;
+          cursor: pointer;
+        }
+      }
+      .price {
+        font-family: Nunito;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 130%;
+      }
+    }
+  }
+}

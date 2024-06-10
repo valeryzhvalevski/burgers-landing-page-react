@@ -1,56 +1,67 @@
-import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import Button from '../Button/Button';
-import style from './Aside.module.scss';
-import AsideItem from '../AsideItem/AsideItem';
-import delivery from '../../assets/delivery.png';
-import { calcAllProductCount, calcAllProductPrice } from '../../common/counterPrice';
+import BasketItem from "../BasketItem/BasketItem";
+import Buttons from "./../Buttons/Buttons";
+import deliveryImg from "../../assets/basket/delivery.png";
+import style from "./Aside.module.scss";
+import { v4 as uuidv4 } from "uuid";
+import { getCommonCount, getCommonPrice } from "../Common/getCalculation";
 
-export default function Aside({ stateObj }) {
-  const { cart, setCart } = stateObj;
+export default function Aside({ basketState }) {
+  const { basketArr, setBasketArr } = basketState;
 
-  function editCountCart(id, symbol) {
-    console.log('Editing cart item count for ID:', id, 'with symbol:', symbol);
-    const newCart = cart.map((item) => {
+  function changeBasketCount(id, symbol) {
+    const newBasketArr = basketArr.filter((item) => {
       if (item.id === id) {
         item.count = +item.count + symbol;
-        return item;
+        if (item.count <=0) {
+          return false;
+        }
+        return true
       }
-      return item;
+      return true;
     });
-    setCart(newCart);
+    setBasketArr(newBasketArr);
   }
 
   return (
-    <div className={style.container}>
-      <div className={style.titleContainer}>
-        <h3>Корзина</h3>
-        <p>{calcAllProductCount(cart)}</p>
+    <div className={style.wrapperAside}>
+      <div className={style.basketCounter}>
+        <h2>Корзина</h2>
+        {basketArr.length !== 0 && <div>{getCommonCount(basketArr)}</div>}
       </div>
-      <div className={style.containerContent}>
-        {cart.map((item) => (
-          <AsideItem
-            image={item.image}
-            title={item.title}
-            price={item.price}
-            weight={item.weight}
-            value={item.value}
-            key={uuidv4()}
-            id={item.id}
-            editCountCart={editCountCart}
-            count={item.count}
+      <hr />
+      {basketArr.length !== 0 ? (
+        <div className={style.basketFull}>
+          <div className={style.basketItems}>
+            {basketArr.map((item) => (
+              <BasketItem
+                img={item.img}
+                title={item.title}
+                price={item.price}
+                gramm={item.gramm}
+                count={item.count}
+                key={uuidv4()}
+                id={item.id}
+                changeBasketCount={changeBasketCount}
+              />
+            ))}
+          </div>
+          <div className={style.sum}>
+            <p>Итого</p>
+            <p>{getCommonPrice(basketArr)}₽</p>
+          </div>
+          <Buttons
+            content="Оформить заказ"
+            colorBack="#FF7020"
+            colorText="#FFFFFF"
           />
-        ))}
-      </div>
-      <div className={style.total}>
-        <p>Итого</p>
-        <p>{calcAllProductPrice(cart)}₽</p>
-      </div>
-      <Button content="Оформить заказ" color="#FF7020" colorText="white" />
-      <div className={style.delivery}>
-        <img src={delivery} alt="delivery" />
-        <p>Бесплатная доставка</p>
-      </div>
+          <div className={style.delivery}>
+            <img src={deliveryImg} alt="delivery" />
+            <p>Бесплатная доставка</p>
+          </div>
+        </div>
+      ) : (
+        <p className={style.emptyBasket}>Тут пока пусто</p>
+      )}
     </div>
   );
 }

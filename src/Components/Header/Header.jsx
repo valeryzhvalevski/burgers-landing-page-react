@@ -1,25 +1,22 @@
+import Heading from "../Heading/Heading";
+import Buttons from "../Buttons/Buttons";
+import logo from "../../assets/logo.png";
+import burger from "../../assets/burgerPic.png";
 import style from "./Header.module.scss";
-import Button from "../Button/Button";
-import logoHeader from "../../assets/logo-header.svg";
-import headerPic from "../../assets/header-pic.png";
 
 export default function Header() {
   return (
-    <div className={style.container}>
-      <div className={style.bg}></div>
-      <div className={style.logo}>
-        <img src={logoHeader} alt="logo" />
+    <div className={style.wrapperHeader}>
+      <div className={style.wrapperLogo}>
+        <img src={logo} alt="logo" className={style.logo} />
       </div>
-      <div className={style.contentBox}>
-        <div>
-          <img src={headerPic} alt="pic" />
-        </div>
-        <div className={style.content}>
-          <h1>Только самые <span> сочные бургеры <br />!</span></h1>
-          <p>Бесплатная доставка от 599₽</p>
-          <div className={style.wrapperBtn}>
-            <Button content="Добавить" color="#F2F2F3" colorText="black" />
-          </div>
+      <div className={style.mainInfoHeader}>
+        <img src={burger} alt="burger" className={style.logo} />
+        <div className={style.headerText}>
+          <Heading content="Только самые" color="white" />
+          <Heading content="сочные бургеры" color="rgb(255, 92, 0)" />
+          <Heading content="!" color="rgb(255, 92, 0)" />
+          <p className={style.deliveryText}>Бесплатная доставка от 599 Р</p>
         </div>
       </div>
     </div>

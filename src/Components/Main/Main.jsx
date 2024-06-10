@@ -1,26 +1,56 @@
+import BurgerCard from "../BurgerCard/BurgerCard";
+import style from "./Main.module.scss";
+import { v4 as uuidv4 } from "uuid";
 
-import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import style from './Main.module.scss';
-import Card from '../Card/Card';
+export default function Main({ headingobj, modalObj, basketState }) {
+  const {
+    setModal,
+    setModalImage,
+    setModalTitle,
+    setModalPrice,
+    setModalInfo,
+    setModalGramm,
+    setModalId,
+  } = modalObj;
+  const { menu, heading } = headingobj;
 
-export default function Main({ stateObj, getDataActiveModal }) {
-  const { products } = stateObj;
+  function openModal(img, title, price, info, gramm, id) {
+    setModal(true);
+    setModalImage(img);
+    setModalTitle(title);
+    setModalPrice(price);
+    setModalInfo(info);
+    setModalGramm(gramm);
+    setModalId(id);
+  }
 
   return (
-    <div className={style.container}>
-      <h2>Бургеры</h2>
-      {products.map((item) => (
-        <Card
-          getDataActiveModal={getDataActiveModal} 
-          images={item.images}
-          price={item.price}
-          gramm={item.gramms}
-          title={item.title}
-          key={uuidv4()}
-          id={item.id} 
-        />
-      ))}
+    <div className={style.wrapperMain}>
+      <h2 className={style.heading}>{heading}</h2>
+      <div className={style.burgerCars}>
+        {menu.map((item) => (
+          <BurgerCard
+            img={item.img}
+            title={item.title}
+            price={item.price}
+            gramm={item.gramm}
+            id={item.id}
+            key={uuidv4()}
+            obj={item}
+            basketState={basketState}
+            onClick={() =>
+              openModal(
+                item.img,
+                item.title,
+                item.price,
+                item.info,
+                item.gramm,
+                item.id
+              )
+            }
+          />
+        ))}
+      </div>
     </div>
   );
 }

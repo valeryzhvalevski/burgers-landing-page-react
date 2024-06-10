@@ -1,22 +1,24 @@
-import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import style from './Nav.module.scss';
-import NavItem from '../NavItem/NavItem';
-import data from '../../data/navItems.json';
-import addNavImg from '../../common/addNavItemImages';
+import addNavImage from "../Common/addNavImage";
+import NavElement from "../NavElement/NavElement";
+import data from "../data/nav.json";
+import style from "./Nav.module.scss";
+import { v4 as uuidv4 } from "uuid";
 
-export default function Nav({ editNavIndex }) {
-  const newData = addNavImg(data);
+
+export default function Nav({ headingobj, editNavLink }) {
+  const newData = addNavImage(data);
+  const { heading} = headingobj;
 
   return (
-    <div className={style.container}>
+    <div className={style.wrapperNav}>
       {newData.map((item, index) => (
-        <NavItem
-          editNavIndex={editNavIndex}
-          image={item.image}
+        <NavElement
+          img={item.img}
           title={item.title}
-          index={index}
           key={uuidv4()}
+          index={index}
+          checked={heading == item.title}
+          editNavLink={editNavLink}
         />
       ))}
     </div>

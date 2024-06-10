@@ -1,107 +1,104 @@
-// import Aside from "./Components/Aside/Aside";
-// import Header from "./Components/Header/Header";
-// import Main from "./Components/Main/Main";
-// import Footer from "./Components/Footer/Footer";
-// import Nav from "./Components/Nav/Nav";
-// import "./style/App.scss";
-// import { useState } from "react";
-// import addAsideImg from "./common/addAsideImg";
-// import addDataImage from "./common/addDataImage";
-// import burgers from "./data/burgers.json";
-// import combo from "./data/combo.json";
-// import sauce from "./data/sauce.json";
-// import snacks from "./data/snacks.json";
-// import asideData from "./data/asideData.json";
-// import Modal from "./Components/Modal/Modal";
-
-// const arrProducts = [burgers, combo, sauce, snacks];
-
-// export default function App() {
-//   const [activeNavIndex, setActiveNavIndex] = useState(0);
-//   const [cart, setCart] = useState(addAsideImg(asideData));
-//   const [products, setProducts] = useState(
-//     addDataImage(arrProducts[activeNavIndex], arrProducts[activeNavIndex])
-//   );
-//   const [activeItemModal, setActiveItemModal] = useState(false);
-
-//   function editNavIndex(index) {
-//     setActiveNavIndex(index);
-//     setProducts(addDataImage(arrProducts[index], arrProducts[activeNavIndex]));
-//   }
-
-//   function getDataActiveModal(id) {
-//     setActiveItemModal(products.find((item) => item.id === id));
-//   }
-
-//   const stateObj = { cart, setCart, products, setProducts };
-//   return (
-//     <div className="container">
-//       {activeItemModal && (
-//         <Modal obj={activeItemModal} setActiveItemModal={setActiveItemModal} />
-//       )}
-//       <Header />
-//       <Nav />
-//       <div className="wrapper_content">
-//         <Aside stateObj={stateObj} />
-//         <Main stateObj={stateObj} getDataActiveModal={getDataActiveModal} />
-//       </div>
-//       <Footer />
-//     </div>
-//   );
-// }
-
-import React, { useState } from 'react';
-import Aside from './Components/Aside/Aside';
-import Header from './Components/Header/Header';
-import Main from './Components/Main/Main';
-import Footer from './Components/Footer/Footer';
-import Nav from './Components/Nav/Nav';
-import Modal from './Components/Modal/Modal';
-import './style/App.scss';
-import addAsideImg from './common/addAsideImg';
-import addDataImage from './common/addDataImage';
-import burgers from './data/burgers.json';
-import combo from './data/combo.json';
-import sauce from './data/sauce.json';
-import snacks from './data/snacks.json';
-import asideData from './data/asideData.json';
-
-const arrProducts = [burgers, combo, sauce, snacks];
+import Nav from "./Components/Nav/Nav";
+import Main from "./Components/Main/Main";
+import Aside from "./Components/Aside/Aside";
+import Footer from "./Components/Footer/Footer";
+import Header from "./Components/Header/Header";
+import ModalWindow from "./Components/ModalWindow/ModalWindow";
+import style from "./style/App.module.scss";
+import { useEffect, useState } from "react";
+import addImage from "./Components/Common/addImageFunc";
+import { getProducts, getBasket } from "./services/get";
 
 export default function App() {
-  const [activeNavIndex, setActiveNavIndex] = useState(0);
-  const [cart, setCart] = useState(addAsideImg(asideData));
-  const [products, setProducts] = useState(
-    addDataImage(arrProducts[activeNavIndex], arrProducts[activeNavIndex])
-  );
-  const [activeItemModal, setActiveItemModal] = useState(false);
+  const [arrMenu, setArrMenu] = useState(false);
+  const [activeNavLink, setActiveNavLink] = useState(0);
+  const [menu, setMenu] = useState([]);
+  const [heading, setHeading] = useState("Бургеры");
+  const [basketArr, setBasketArr] = useState([]);
+  const [modal, setModal] = useState(false);
+  const [modalImage, setModalImage] = useState(null);
+  const [modalTitle, setModalTitle] = useState("null");
+  const [modalPrice, setModalPrice] = useState("null");
+  const [modalInfo, setModalInfo] = useState("null");
+  const [modalGramm, setModalGramm] = useState("null");
+  const [modalId, setModalId] = useState("null");
+  const [flag, setFlag] = useState(false);
+  const objFlag = { flag, setFlag };
+  const basketState = { basketArr, setBasketArr };
+  const headingobj = { heading, setHeading, menu, setMenu };
+  const modalObj = {
+    modal,
+    setModal,
+    modalImage,
+    setModalImage,
+    modalTitle,
+    setModalTitle,
+    modalPrice,
+    setModalPrice,
+    modalInfo,
+    setModalInfo,
+    modalGramm,
+    setModalGramm,
+    modalId,
+    setModalId,
+  };
 
-  function editNavIndex(index) {
-    console.log('Navigation index changed to:', index);
-    setActiveNavIndex(index);
-    setProducts(addDataImage(arrProducts[index], arrProducts[activeNavIndex]));
+  useEffect(() => {
+    getData();
+  }, []);
+
+  useEffect(() => {
+    editBasket();
+  }, [flag]);
+
+  async function editBasket() {
+    const data = await getBasket();
+    setBasketArr(data);
   }
 
-  function getDataActiveModal(id) {
-    const selectedItem = products.find((item) => item.id === id);
-    console.log('Opening modal for item:', selectedItem);
-    setActiveItemModal(selectedItem);
+  async function getData() {
+    const data = await getProducts();
+    setArrMenu([
+      { title: "burgers", data: data.burgers },
+      { title: "zakuski", data: data.zakuski },
+      { title: "hotdogs", data: data.hotdogs },
+      { title: "kombo", data: data.kombo },
+      { title: "shaurma", data: data.shaurma },
+      { title: "pizza", data: data.pizza },
+      { title: "vok", data: data.wok },
+      { title: "dessert", data: data.desserts },
+      { title: "sauce", data: data.sauce },
+    ]);
+    setMenu(addImage({ title: "burgers", data: data.burgers }));
   }
 
-  const stateObj = { cart, setCart, products, setProducts };
+  function editNavLink(index, title) {
+    setActiveNavLink(index);
+    setMenu(addImage(arrMenu[index]));
+    setHeading(title);
+  }
 
   return (
-    <div className="container">
-      {activeItemModal && (
-        <Modal obj={activeItemModal} setActiveItemModal={setActiveItemModal} />
+    <>
+      {modal && (
+        <ModalWindow
+          modalObj={modalObj}
+          basketState={basketState}
+          objFlag={objFlag}
+        />
       )}
       <Header />
-      <Nav editNavIndex={editNavIndex} />
-      <div className="wrapper_content">
-        <Aside stateObj={stateObj} />
-        <Main stateObj={stateObj} getDataActiveModal={getDataActiveModal} />
+      <Nav headingobj={headingobj} editNavLink={editNavLink} />
+      <div className={style.wrapperMain}>
+        <Aside basketState={basketState} />
+        <Main
+          headingobj={headingobj}
+          modalObj={modalObj}
+          basketState={basketState}
+          objFlag={objFlag}
+        />
       </div>
       <Footer />
-    </div>
+    </>
   );
 }

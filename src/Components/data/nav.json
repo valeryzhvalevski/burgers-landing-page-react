@@ -1,0 +1,57 @@
+[
+    {
+        "title": "Бургеры",
+        "img": null,
+        "id": "87iji", 
+        "checked":true
+    },
+    {
+        "title": "Закуски",
+        "img": null,
+        "id": "47tr",
+        "checked":false
+    },
+    {
+        "title": "Хот-доги",
+        "img": null,
+        "id": "yy54",
+        "checked":false,
+        "arr": "newHotDogs"
+    },
+    {
+        "title": "Комбо",
+        "img": null,
+        "id": "83ecd",
+        "checked":false
+    },
+    {
+        "title": "Шаурма",
+        "img": null,
+        "id": "87gfrve",
+        "checked":false
+    },
+    {
+        "title": "Пицца",
+        "img": null,
+        "id": "234gh",
+        "checked":false
+    },
+    {
+        "title": "Вок",
+        "img": null,
+        "id": "65gbhn",
+        "checked":false
+    },
+    {
+        "title": "Десерты",
+        "img": null,
+        "id": "65f",
+        "checked":false
+    },
+    {
+        "title": "Соусы",
+        "img": null,
+        "id": "65fh",
+        "checked":false
+    }
+]
