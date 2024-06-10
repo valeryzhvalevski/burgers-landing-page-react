@@ -141,7 +141,7 @@
         "count": 1
       }
     ],
-    "kombo": [
+    "combo": [
       {
         "title": "Бокс 1",
         "price": "689",
@@ -367,7 +367,7 @@
         "count": 1
       }
     ],
-    "zakuski": [
+    "snacks": [
       {
         "title": "Начос",
         "price": "250",

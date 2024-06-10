@@ -60,9 +60,9 @@ export default function App() {
     const data = await getProducts();
     setArrMenu([
       { title: "burgers", data: data.burgers },
-      { title: "zakuski", data: data.zakuski },
+      { title: "snacks", data: data.snacks },
       { title: "hotdogs", data: data.hotdogs },
-      { title: "kombo", data: data.kombo },
+      { title: "combo", data: data.combo },
       { title: "shaurma", data: data.shaurma },
       { title: "pizza", data: data.pizza },
       { title: "vok", data: data.wok },

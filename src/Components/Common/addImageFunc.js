@@ -6,12 +6,12 @@ import burger5 from "../../assets/burgers/photo5.png";
 import burger6 from "../../assets/burgers/photo6.png";
 
 
-import kombo1 from "../../assets/kombo/combo1.webp";
-import kombo2 from "../../assets/kombo/combo2.webp";
-import kombo3 from "../../assets/kombo/combo3.webp";
-import kombo4 from "../../assets/kombo/combo4.webp";
-import kombo5 from "../../assets/kombo/combo5.webp";
-import kombo6 from "../../assets/kombo/combo6.png";
+import combo1 from "../../assets/kombo/combo1.webp";
+import combo2 from "../../assets/kombo/combo2.webp";
+import combo3 from "../../assets/kombo/combo3.webp";
+import combo4 from "../../assets/kombo/combo4.webp";
+import combo5 from "../../assets/kombo/combo5.webp";
+import combo6 from "../../assets/kombo/combo6.png";
 
 
 import shaurma1 from "../../assets/Shaurma/shaurma1.jpg";
@@ -58,16 +58,16 @@ import hotdog3 from "../../assets/hot-dogs/photo (5).png";
 
 
 
-import zakuski1 from "../../assets/zakuski/photo.jpeg";
-import zakuski2 from "../../assets/zakuski/photo (1).jpeg";
-import zakuski3 from "../../assets/zakuski/photo (2).png";
+import snack1 from "../../assets/snacks/photo.jpeg";
+import snack2 from "../../assets/snacks/photo (1).jpeg";
+import snack3 from "../../assets/snacks/photo (2).png";
 
 
 const allImages = {
   burgers: [burger1, burger2, burger3, burger4, burger5, burger6],
-  zakuski: [zakuski1, zakuski2, zakuski3],
+  snacks: [snack1, snack2, snack3],
   hotdogs: [hotdog1, hotdog2, hotdog3],
-  kombo: [kombo1, kombo2, kombo3, kombo4, kombo5, kombo6],
+  combo: [combo1, combo2, combo3, combo4, combo5, combo6],
   shaurma: [shaurma1, shaurma2, shaurma3, shaurma4, shaurma5, shaurma6],
   pizza: [pizza1, pizza2, pizza3, pizza4, pizza5, pizza6],
   dessert: [dessert1, dessert2, dessert3, dessert4, dessert5, dessert6],

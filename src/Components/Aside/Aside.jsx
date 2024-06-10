@@ -60,7 +60,7 @@ export default function Aside({ basketState }) {
           </div>
         </div>
       ) : (
-        <p className={style.emptyBasket}>Тут пока пусто</p>
+        <p className={style.emptyBasket}>Здесь пока пусто 😒</p>
       )}
     </div>
   );
