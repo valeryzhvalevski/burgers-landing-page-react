@@ -4,6 +4,8 @@ import deliveryImg from "../../assets/basket/delivery.png";
 import style from "./Aside.module.scss";
 import { v4 as uuidv4 } from "uuid";
 import { getCommonCount, getCommonPrice } from "../Common/getCalculation";
+import putBasket from "../../services/put";
+import deleteBasket from "../../services/delete";
 
 export default function Aside({ basketState }) {
   const { basketArr, setBasketArr } = basketState;
@@ -12,8 +14,10 @@ export default function Aside({ basketState }) {
     const newBasketArr = basketArr.filter((item) => {
       if (item.id === id) {
         item.count = +item.count + symbol;
+        putBasket(item, item.id)
         if (item.count <=0) {
-          return false;
+          deleteBasket(item, item.id)
+          return false
         }
         return true
       }
@@ -60,7 +64,7 @@ export default function Aside({ basketState }) {
           </div>
         </div>
       ) : (
-        <p className={style.emptyBasket}>Здесь пока пусто 😒</p>
+        <p className={style.emptyBasket}>Тут пока пусто</p>
       )}
     </div>
   );

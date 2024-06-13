@@ -4,10 +4,9 @@ import data from "../data/nav.json";
 import style from "./Nav.module.scss";
 import { v4 as uuidv4 } from "uuid";
 
-
 export default function Nav({ headingobj, editNavLink }) {
   const newData = addNavImage(data);
-  const { heading} = headingobj;
+  const { heading } = headingobj;
 
   return (
     <div className={style.wrapperNav}>

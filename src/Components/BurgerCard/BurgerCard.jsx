@@ -1,5 +1,7 @@
 import Buttons from "../Buttons/Buttons";
 import style from "./BurgerCard.module.scss";
+import postBasket from "../../services/post";
+import putBasket from "../../services/put";
 
 export default function BurgerCard({
   title,
@@ -9,16 +11,20 @@ export default function BurgerCard({
   onClick,
   obj,
   basketState,
+  objFlag,
 }) {
-  const { basketArr, setBasketArr } = basketState;
+  const { basketArr } = basketState;
+  const { flag, setFlag } = objFlag;
 
   function addingToOrder(e) {
     e.stopPropagation();
     const existsBasketItem = basketArr.find((item) => item.id == obj.id);
     if (existsBasketItem) {
       existsBasketItem.count += 1;
-      setBasketArr([...basketArr]);
-    } else setBasketArr([...basketArr, obj]);
+      putBasket(existsBasketItem, existsBasketItem.id);
+      setFlag(!flag);
+    } else postBasket(obj);
+    setFlag(!flag);
   }
 
   return (

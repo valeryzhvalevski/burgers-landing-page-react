@@ -5,14 +5,12 @@ import burger4 from "../../assets/burgers/photo4.png";
 import burger5 from "../../assets/burgers/photo5.png";
 import burger6 from "../../assets/burgers/photo6.png";
 
-
-import combo1 from "../../assets/kombo/combo1.webp";
-import combo2 from "../../assets/kombo/combo2.webp";
-import combo3 from "../../assets/kombo/combo3.webp";
-import combo4 from "../../assets/kombo/combo4.webp";
-import combo5 from "../../assets/kombo/combo5.webp";
-import combo6 from "../../assets/kombo/combo6.png";
-
+import combo1 from "../../assets/combo/kombo1.jpeg";
+import combo2 from "../../assets/combo/kombo2.jpg";
+import combo3 from "../../assets/combo/kombo3.jpg";
+import combo4 from "../../assets/combo/kombo4.jpg";
+import combo5 from "../../assets/combo/kombo5.jpg";
+import combo6 from "../../assets/combo/kombo6.jpg";
 
 import shaurma1 from "../../assets/Shaurma/shaurma1.jpg";
 import shaurma2 from "../../assets/Shaurma/shaurma2.jpg";
@@ -21,16 +19,12 @@ import shaurma4 from "../../assets/Shaurma/shaurma4.jpg";
 import shaurma5 from "../../assets/Shaurma/shaurma5.jpg";
 import shaurma6 from "../../assets/Shaurma/shaurma6.jpg";
 
-
-
 import pizza1 from "../../assets/pizza/pizza1.jpeg";
 import pizza2 from "../../assets/pizza/pizza2.jpeg";
 import pizza3 from "../../assets/pizza/pizza3.jpg";
 import pizza4 from "../../assets/pizza/pizza4.jpg";
 import pizza5 from "../../assets/pizza/pizza5.jpeg";
 import pizza6 from "../../assets/pizza/pizza7.jpg";
-
-
 
 import dessert1 from "../../assets/desserts/desserts1.jpg";
 import dessert2 from "../../assets/desserts/desserts2.jpg";
@@ -40,9 +34,8 @@ import dessert5 from "../../assets/desserts/desserts5.jpg";
 import dessert6 from "../../assets/desserts/desserts7.jpg";
 
 
-
-import vok1 from "../../assets/wok/vok1.jpeg";
-import vok2 from "../../assets/wok/vok2.jpeg";
+import vok1 from "../../assets/wok/vok1.jpg";
+import vok2 from "../../assets/wok/vok2.jpg";
 import vok3 from "../../assets/wok/vok3.jpg";
 
 
@@ -58,8 +51,8 @@ import hotdog3 from "../../assets/hot-dogs/photo (5).png";
 
 
 
-import snack1 from "../../assets/snacks/photo.jpeg";
-import snack2 from "../../assets/snacks/photo (1).jpeg";
+import snack1 from "../../assets/snacks/photo.png";
+import snack2 from "../../assets/snacks/photo (1).png";
 import snack3 from "../../assets/snacks/photo (2).png";
 
 

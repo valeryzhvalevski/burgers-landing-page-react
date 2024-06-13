@@ -3,8 +3,10 @@ import style from "./ModalWindow.module.scss";
 import closeImg from "../../assets/close.png";
 import { useState } from "react";
 import { getModalPrice } from "../Common/getCalculation";
+import putBasket from "../../services/put";
+import postBasket from "../../services/post";
 
-export default function ModalWindow({ modalObj, basketState }) {
+export default function ModalWindow({ modalObj, basketState, objFlag }) {
   const {
     setModal,
     modalImage,
@@ -14,37 +16,36 @@ export default function ModalWindow({ modalObj, basketState }) {
     modalGramm,
     modalId,
   } = modalObj;
-
-  const { basketArr, setBasketArr } = basketState;
+  const { basketArr } = basketState;
+  const { flag, setFlag } = objFlag;
+  const [modalCounter, setModalCounter] = useState(1);
 
   function closeModal() {
     setModal(false);
   }
 
-  const [modalCounter, setModalCounter] = useState(1);
-
   function editModalCounter(symbol) {
     if (modalCounter == 1 && symbol == -1) return;
     setModalCounter(modalCounter + +symbol);
   }
+
   function addingToOrder() {
     const existsBasketItem = basketArr.find((item) => item.id == modalId);
     if (existsBasketItem) {
       existsBasketItem.count += modalCounter;
-      setBasketArr([...basketArr]);
+      putBasket(existsBasketItem, existsBasketItem.id);
+      setFlag(!flag);
     } else
-      setBasketArr([
-        ...basketArr,
-        {
-          img: modalImage,
-          title: modalTitle,
-          price: modalPrice,
-          count: modalCounter,
-          gramm: modalGramm,
-          id: modalId,
-        },
-      ]);
-    closeModal();
+      postBasket({
+        img: modalImage,
+        title: modalTitle,
+        price: modalPrice,
+        count: modalCounter,
+        gramm: modalGramm,
+        id: modalId,
+        info: modalInfo,
+      });
+    setFlag(!flag);
   }
 
   return (
